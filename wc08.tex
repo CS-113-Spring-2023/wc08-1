@@ -1,0 +1,73 @@
+\documentclass[a4paper]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{titling}
+
+\runningheader{CS/MATH 113}{WC08: Sets}{\theauthor}
+\runningheadrule
+\runningfootrule
+\runningfooter{}{Page \thepage\ of \numpages}{}
+
+\printanswers
+
+\title{Weekly Challenge 08: Sets\\CS/MATH 113 Discrete Mathematics}
+\author{team-name}  % <== for grading, replace with your team name, e.g. q1-team-420
+\date{Habib University | Spring 2023}
+
+\qformat{{\large\bf \thequestion. \thequestiontitle}\hfill}
+\boxedpoints
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\titledquestion{Inclusion–Exclusion Principle}
+
+  We are often interested in finding the cardinality of a union of a finite number of sets, $A_1,A_2,\ldots,A_n$. The intuitive formula
+  \begin{align}
+    \label{eq:wrong}
+    \abs{A_1\cup A_2 \cup \dots \cup A_n} & = \abs{\bigcup_{1\leq i \leq n}A_i}
+  \end{align}
+  turns out to be incorrect in the general case because of over- and under- counting.
+  
+  For example, $|A_1| + |A_2|$ counts each element that is in $A_1$ but not in $A_2$ or in $A_2$ but not in $A_1$ exactly once, and each element that is in both $A_1$ and $A_2$ exactly twice. Thus, if the number of elements that are in both $A_1$ and $A_2$ is subtracted from $|A_1| + |A_2|$, elements in $A_1 \cap A_2$ will be counted only once. Hence,
+  \[
+    |A_1 \cup A_2| = |A_1| + |A_2| - |A_1 \cap A_2|.
+  \]
+  The generalization of this result to unions of an arbitrary number of sets is called the \textit{Principle of Inclusion–Exclusion}. It states the formula for the number of elements in the union of $n$ sets as
+  \begin{align}
+    \abs{A_1\cup A_2 \cup \dots \cup A_n} =&  \abs{\bigcup_{1\leq i \leq n}A_i} \nonumber \\ 
+    =&  \sum_{1 \leq i \leq n}{\abs{A_i}} - \sum_{1\leq i \leq j \leq n}{\abs{A_i \cap A_j}} \nonumber   \\
+                                           & + \sum_{1\leq i \leq j \leq k \leq n}{\abs{A_i \cap A_j \cap A_k}} - \dots + (-1)^{n+1}\abs{A_1 \cap A_2 \cap \dots \cap A_n}.     \label{eq:right}
+  \end{align}
+  
+  \begin{parts}
+  \part[2] Use Equation \ref{eq:right} to derive an expression for the number of elements in the union of 2 sets.
+  \part[4] In 2030, the total enrollment at Habib University's City Campus has grown to 1984 students. There are still 2 schools---DSSE and AHSS---and DSSE has 3 majors---CS, ECE, and Math. Minors are done away with. Instead, students have the option to declare multiple majors. A student with multiple majors appears in the list of enrolled students of each program.
+
+    The number of students enrolled in the CS, ECE, and Math programs are 809, 556, and 596 respectively. The number of common students in CS and ECE is 369, in CS and Math is 309, and in ECE and Math is 240. Lastly, 138 students are enrolled in all 3 programs.
+    
+    How many students are enrolled in AHSS?
+  \part[2] State the formula for the number of elements in the union of 4 sets.
+  \part[2] In which cases can Equation \ref{eq:wrong} hold?
+  \end{parts}
+
+  \begin{solution}
+    % Enter your solution here.
+  \end{solution}
+
+
+\end{questions}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
