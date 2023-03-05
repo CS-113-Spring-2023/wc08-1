@@ -60,7 +60,61 @@
   \end{parts}
 
   \begin{solution}
-    % Enter your solution here.
+    a) Using Equation 2 for the case of two sets, we have:
+    \newline
+    \begin{equation}
+        \abs{A1 \cup A2} = \abs{A1} + \abs{A2} - \abs{A1 \cap A2}
+    \end{equation}
+    \newline
+    This is the same as the formula we derived in the introduction.
+    \newline
+    \newline
+    (b) Let A be the set of students enrolled in the CS, ECE, and Math programs, and let B be the set of students enrolled in AHSS. We are given the following information:
+    \newline
+    \abs{A} = 809 + 556 + 596 = 1961
+    \newline
+    \abs{A \cap B} = 138
+    \newline
+    \abs{A \cap CS} = 809
+    \newline
+    \abs{A \cap ECE} = 556
+    \newline
+    \abs{A \cap Math} = 596
+    \newline
+    \abs{CS \cap ECE} = 369
+    \newline
+    \abs{CS \cap Math} = 309
+    \newline
+    \abs{ECE \cap Math} = 240
+    \newline
+    We want to find abs{B}, the number of students enrolled in AHSS. Using the Principle of Inclusion-Exclusion (Equation 2) for the set A and its intersections with the sets CS, ECE, and Math, we have:
+    \newline
+    
+    \abs{A \cup B} = \abs{A} + \abs{B} - \abs{A \cap B}
+    
+    \hspace{1.3cm}= (\abs{CS} + \abs{ECE} + \abs{Math} - \abs{CS \cap ECE} - \abs{CS \cap Math} - \abs{ECE \cap Math}) + \abs{B} - \abs{A \cap B}
+    
+    \hspace{1.4cm} = (809 + 556 + 596 - 369 - 309 - 240) + \abs{B} - 138
+    
+    \hspace{1.5cm}= 1043 + \abs{B}
+    
+    We know that \abs{A \cup B} = 1984 (the total enrollment), so we can solve for \abs{B}:
+    
+    \abs{B} = 1984 - 1043
+    \abs{B} = 941
+    
+    Therefore, there are 941 students enrolled in AHSS.
+    \newline
+    \newline
+    (c) The formula for the number of elements in the union of four sets is:
+    
+    \abs{A1 \cup A2 \cup A3 \cup A4} = \abs{A1} + \abs{A2} + \abs{A3} + \abs{A4} - \abs{A1 \cap A2} - \abs{A1 \cap A3} - \abs{A1 \cap A4} - \abs{A2 \cap A3} - \abs{A2 \cap A4} - \abs{3 \cap A4} + \abs{A1 \cap A2 cap A3} + \abs{A1 \cap A2 \cap A4} + \abs{A1 \cap A3 \cap A4} + \abs{A2 \cap A3 \cap A4} - \abs{A1 \cap A2 \cap A3 \cap A4}
+    \newline
+    \newline
+    (d) If and only if the sets A1, A2,..., An are pairwise disjoint, equation 1 can be true. In other words, there are no elements that are shared by any of the sets. Equation 1 will count certain elements more than necessary and others less so if there is any overlap between the sets. Equation 2 is therefore required to account for this over- and under-counting.
+
+
+
   \end{solution}
 
 
